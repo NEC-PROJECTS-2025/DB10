@@ -1,0 +1,134 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation Bar */
+/* Navbar styling */
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  .navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns items horizontally */
+    justify-content: space-around; /* Even spacing */
+    align-items: center; /* Ensures all items are aligned vertically */
+  }
+  
+  .navbar-list li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-list a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    display: block;
+  }
+  
+  .navbar-list a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+  }
+  
+
+/* Main Content */
+main {
+    padding: 2em;
+    margin: auto;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+form {
+    margin: 2em 0;
+}
+
+form input[type="file"],
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 1em;
+    margin: 0.5em 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #f1f1f1;
+    margin-top: 2em;
+}
+
+/* Table Styling for Confusion Matrix */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 0.75em;
+    text-align: center;
+}
+
+table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav a {
+        float: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    main {
+        padding: 1em;
+    }
+}

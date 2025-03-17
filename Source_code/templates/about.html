@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Music Genre Classification Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6200ea;
+            --secondary-color: #b388ff;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --card-bg: white;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-bg);
+        }
+
+        .navbar {
+            background: var(--primary-color);
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar-list a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .tech-item {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .methodology {
+            margin: 2rem 0;
+        }
+
+        .methodology-step {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 4px;
+        }
+
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .top-navbar {
+            background:rgb(34, 36, 41);
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .team-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .team-label {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .team-members {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .team-member {
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+
+        .navbar {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-navbar">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <span class="project-title">Deep Learning Music Genre Classifier</span>
+        </div>
+        <div class="team-section">
+            <span class="team-label">Team Members:</span>
+            <div class="team-members">
+                <span class="team-member">ARJUN</span>
+                <span class="team-member">PAVAN</span>
+                <span class="team-member">KALYAN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/predict">Predictions</a></li>
+                <li><a href="/evaluation">Model Evaluation</a></li>
+                <li><a href="/flowchart">Project Flow</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h1 class="section-title">Music Genre Classification Using Deep Learning</h1>
+            <p>Our project leverages state-of-the-art deep learning techniques to automatically classify music into different genres. By analyzing complex audio patterns and features, we've developed a robust system that can accurately identify various music genres with high precision.</p>
+
+            <h2 class="section-title">Project Overview</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h3>Deep Learning Model</h3>
+                    <p>Using Convolutional Neural Networks (CNN) optimized for audio processing, our model analyzes spectral patterns and temporal features to classify music genres.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wave-square feature-icon"></i>
+                    <h3>Audio Processing</h3>
+                    <p>Implements advanced audio processing techniques including MFCC extraction, spectrogram generation, and signal preprocessing for optimal feature extraction.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>Performance Metrics</h3>
+                    <p>Achieves high accuracy across multiple genres through careful model training and validation, with comprehensive evaluation metrics.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Technical Methodology</h2>
+            <div class="methodology">
+                <div class="methodology-step">
+                    <h3>1. Data Preprocessing</h3>
+                    <p>- Audio file conversion and normalization</p>
+                    <p>- Feature extraction using Mel-spectrograms and MFCCs</p>
+                    <p>- Data augmentation techniques for improved model robustness</p>
+                </div>
+                <div class="methodology-step">
+                    <h3>2. Model Architecture</h3>
+                    <p>- Custom CNN architecture optimized for audio classification</p>
+                    <p>- Multiple convolutional layers with batch normalization</p>
+                    <p>- Dropout layers for preventing overfitting</p>
+                </div>
+                <div class="methodology-step">
+                    <h3>3. Training Process</h3>
+                    <p>- Training on large-scale music dataset with various genres</p>
+                    <p>- Implementation of early stopping and learning rate scheduling</p>
+                    <p>- Cross-validation for model reliability</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fab fa-python"></i> Python
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-brain"></i> TensorFlow
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-music"></i> Librosa
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-flask"></i> Flask
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-html5"></i> HTML/CSS
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js"></i> JavaScript
+                </div>
+            </div>
+
+            <h2 class="section-title">Project Goals</h2>
+            <ul>
+                <li>Achieve high accuracy in genre classification across diverse music styles</li>
+                <li>Provide real-time classification capabilities through a web interface</li>
+                <li>Demonstrate the effectiveness of deep learning in music analysis</li>
+                <li>Create a scalable solution for music genre classification</li>
+                <li>Support multiple audio file formats and processing capabilities</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Music Genre Classification Project | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

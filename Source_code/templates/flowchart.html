@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Flow - Music Genre Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6200ea;
+            --secondary-color: #b388ff;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --card-bg: white;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-bg);
+        }
+
+        .navbar {
+            background: var(--primary-color);
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar-list a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .flow-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .flow-section {
+            margin: 3rem 0;
+        }
+
+        .flow-section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flow-item {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .flow-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .flow-value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-label {
+            color: var(--text-color);
+        }
+
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .methodology-step {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .methodology-step h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .chart-container {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .top-navbar {
+            background:rgb(34, 36, 41);
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .team-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .team-label {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .team-members {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .team-member {
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+
+        .navbar {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-navbar">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <span class="project-title">Deep Learning Music Genre Classifier</span>
+        </div>
+        <div class="team-section">
+            <span class="team-label">Team Members:</span>
+            <div class="team-members">
+                <span class="team-member">ARJUN</span>
+                <span class="team-member">PAVAN</span>
+                <span class="team-member">KALYAN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/predict">Predictions</a></li>
+                <li><a href="/evaluation">Model Evaluation</a></li>
+                <li><a href="/flowchart">Project Flow</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="flow-card">
+            <h1><i class="fas fa-project-diagram"></i> Project Flow</h1>
+            <p>Comprehensive overview of the music genre classification project workflow, from data preprocessing to model evaluation.</p>
+            <p>The Music Genre Classification Project involves several key steps to process and classify music. It begins with preprocessing the GTZAN Music Genre Dataset, where audio tracks are split into training, validation, and test sets. The features are then extracted using MFCCs (Mel-frequency cepstral coefficients), which capture the audio's spectral characteristics. A Convolutional Neural Network (CNN) is used for classification, where the model learns patterns from the extracted features. The model is trained with a batch size of 32 and 100 epochs, and evaluated on the test set using metrics like accuracy, precision, recall, and F1-score. The final results show good accuracy in classifying music genres, with opportunities for further improvements like data augmentation and more complex models.</p>
+            <div class="flow-section">
+                <h2><i class="fas fa-code-branch"></i> Project Workflow</h2>
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/preprocess.png') }}" 
+                         alt="Project Workflow"
+                         loading="lazy">
+                </div>
+            <div class="flow-section">
+                <h2><i class="fas fa-database"></i> Dataset Overview</h2>
+                <div class="flow-grid">
+                    <div class="flow-item">
+                        <div class="flow-value">1,000</div>
+                        <div class="flow-label">Original Audio Tracks</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">10</div>
+                        <div class="flow-label">Music Genres</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">30s</div>
+                        <div class="flow-label">Track Duration</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">10,000</div>
+                        <div class="flow-label">Total Samples</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">4 seconds</div>
+                        <div class="flow-label">Total Duration of prediction</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">2 seconds</div>
+                        <div class="flow-label">Overlap of quick prediction</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-section">
+                <h2><i class="fas fa-music"></i> Feature Extraction (MFCC)</h2>
+                <div class="methodology-step">
+                    <h3>Process Overview</h3>
+                    <p>The Mel-frequency cepstral coefficients (MFCCs) are extracted using the following steps:</p>
+                    <ul>
+                        <li>Audio file loading using Librosa</li>
+                        <li>Pre-emphasis filtering</li>
+                        <li>Frame segmentation</li>
+                        <li>MFCC computation using DCT</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/all genre.png') }}" 
+                         alt="MFCC Visualization"
+                         loading="lazy">
+                </div>
+            </div>
+
+            <div class="flow-section">
+                <h2><i class="fas fa-chart-pie"></i> Data Split</h2>
+                <div class="flow-grid">
+                    <div class="flow-item">
+                        <div class="flow-value">80%</div>
+                        <div class="flow-label">Training Set (8,000 samples)</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">10%</div>
+                        <div class="flow-label">Validation Set (1,000 samples)</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">10%</div>
+                        <div class="flow-label">Test Set (1,000 samples)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-section">
+                <h2><i class="fas fa-brain"></i> Model Architecture</h2>
+                <div class="methodology-step">
+                    <h3>CNN Layer Configuration</h3>
+                    <ul>
+                        <li>Input Layer: MFCC features</li>
+                        <li>3 Convolutional Layers with ReLU activation</li>
+                        <li>3 Max-Pooling Layers</li>
+                        <li>Dense Layer (128 neurons)</li>
+                        <li>Dropout Layer (30%)</li>
+                        <li>Output Layer (10 neurons, softmax)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flow-section">
+                <h2><i class="fas fa-chart-line"></i> Model Performance</h2>
+                <div class="flow-grid">
+                    <div class="flow-item">
+                        <div class="flow-value">97.43%</div>
+                        <div class="flow-label">Training Accuracy</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">78.64%</div>
+                        <div class="flow-label">Validation Accuracy</div>
+                    </div>
+                    <div class="flow-item">
+                        <div class="flow-value">80.50%</div>
+                        <div class="flow-label">Test Accuracy</div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Music Genre Classification Project | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

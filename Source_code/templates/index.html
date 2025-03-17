@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning Music Genre Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6200ea;
+            --secondary-color: #b388ff;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background: var(--primary-color);
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar-list a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .top-navbar {
+            background:rgb(34, 36, 41);
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .team-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .team-label {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .team-members {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .team-member {
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .navbar {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-navbar">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <span class="project-title">Deep Learning Music Genre Classifier</span>
+        </div>
+        <div class="team-section">
+            <span class="team-label">Team Members:</span>
+            <div class="team-members">
+                <span class="team-member">ARJUN</span>
+                <span class="team-member">PAVAN</span>
+                <span class="team-member">KALYAN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/predict">Predictions</a></li>
+                <li><a href="/evaluation">Model Evaluation</a></li>
+                <li><a href="/flowchart">Project Flow</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Music Genre Classification with Deep Learning</h1>
+            <p>Experience the power of artificial intelligence in understanding and categorizing music. Our advanced deep learning model analyzes audio patterns to identify genres with high accuracy.</p>
+            <a href="/predict" class="btn">Start Classifying <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+        <section class="features">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h3>Deep Learning Model</h3>
+                    <p>Utilizing state-of-the-art neural networks trained on vast music datasets for accurate genre classification.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-bar feature-icon"></i>
+                    <h3>Real-time Analysis</h3>
+                    <p>Get instant predictions and detailed analysis of music genres with our advanced processing system.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-music feature-icon"></i>
+                    <h3>Multiple Genres</h3>
+                    <p>Support for various music genres including Rock, Jazz, Classical, Pop, Hip-Hop, and more.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Deep Learning Music Genre Classifier | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
