@@ -12,6 +12,7 @@ This project involves developing a deep learning model to classify music audio i
 - **High Accuracy**: Achieved over 99% accuracy on training data and approximately 90% on validation data.
 
 ## Project Structure
+- **Dataset Download**: [Dataset](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification)
 - **Train_Music_Genre_Classifier.ipynb**: Jupyter notebook containing the training process, including data preprocessing, model architecture, and training loop.
 - **Test_Music_Genre.ipynb**: Jupyter notebook for testing the trained model on unseen data and evaluating its performance.
 - **training_hist.json**: JSON file containing the training history, including loss and accuracy metrics for both training and validation datasets.
