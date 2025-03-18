@@ -17,7 +17,7 @@ This project involves developing a deep learning model to classify music audio i
 - **Test_Music_Genre.ipynb**: Jupyter notebook for testing the trained model on unseen data and evaluating its performance.
 - **training_hist.json**: JSON file containing the training history, including loss and accuracy metrics for both training and validation datasets.
 - **Audio Files**: Example audio files used for training and testing, e.g., `blues.00000.wav`, `jazz.00054.wav`.
-- **.H5/keras files**: To download these files click here 👉 (https://drive.google.com/file/d/1OztXuf2lR2VuJZFZvYvNTciCYDgpD-nd/view?usp=sharing)[H5 file]
+- **.H5/keras files**: To download these files click here 👉 [H5 file](https://drive.google.com/file/d/1OztXuf2lR2VuJZFZvYvNTciCYDgpD-nd/view?usp=sharing)
 
 ## Deployment/Frontend
 
